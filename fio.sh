@@ -7,32 +7,19 @@ main() {
     action="${2:-basic}"
     case "${action}" in
     perf)
-        jobs=(
-            01-crystal-disk-mark-nvme-perf.fio
-        )
+        jobs=(01-crystal-disk-mark-nvme-perf.fio)
         ;;
     extra)
-        jobs=(
-            02-crystal-disk-mark-nvme-extra.fio
-        )
+        jobs=(02-crystal-disk-mark-nvme-extra.fio)
         ;;
     mix)
-        jobs=(
-            03-crystal-disk-mark-nvme-mix.fio
-        )
+        jobs=(03-crystal-disk-mark-nvme-mix.fio)
         ;;
     basic)
-        jobs=(
-            01-crystal-disk-mark-nvme-perf.fio
-            02-crystal-disk-mark-nvme-extra.fio
-        )
+        jobs=(01-crystal-disk-mark-nvme-perf.fio 02-crystal-disk-mark-nvme-extra.fio)
         ;;
     all)
-        jobs=(
-            01-crystal-disk-mark-nvme-perf.fio
-            02-crystal-disk-mark-nvme-extra.fio
-            03-crystal-disk-mark-nvme-mix.fio
-        )
+        jobs=(01-crystal-disk-mark-nvme-perf.fio 02-crystal-disk-mark-nvme-extra.fio 03-crystal-disk-mark-nvme-mix.fio)
         ;;
     *)
         exit 0
