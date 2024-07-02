@@ -1,0 +1,45 @@
+[global]
+ioengine=libaio
+direct=1
+runtime=60
+time_based
+
+# ===== Sequential, 1MiB, Q8T1 =====
+[seq-1m-q8t1-readwrite]
+description=Sequential mixed reads and writes
+bs=1m
+iodepth=8
+numjobs=1
+readwrite=readwrite
+rwmixread=50
+stonewall
+
+# ===== Sequential, 128KiB, Q32T1 =====
+[seq-128k-q32t1-readwrite]
+description=Sequential mixed reads and writes
+bs=128k
+iodepth=32
+numjobs=1
+readwrite=readwrite
+rwmixread=50
+stonewall
+
+# ===== Random, 4KiB, Q32T16 =====
+[rand-4k-q32t16-randrw]
+description=Random mixed reads and writes
+bs=4k
+iodepth=32
+numjobs=16
+readwrite=randrw
+rwmixread=50
+stonewall
+
+# ===== Random, 4KiB, Q1T1 =====
+[rand-4k-q1t1-randrw]
+description=Random mixed reads and writes
+bs=4k
+iodepth=1
+numjobs=1
+readwrite=randrw
+rwmixread=50
+stonewall

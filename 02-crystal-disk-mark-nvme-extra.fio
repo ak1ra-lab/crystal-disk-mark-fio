@@ -4,21 +4,9 @@ direct=1
 runtime=60
 time_based
 
-[seq-1m-q8t1-read]
-bs=1m
-iodepth=8
-numjobs=1
-readwrite=read
-stonewall
-
-[seq-1m-q8t1-write]
-bs=1m
-iodepth=8
-numjobs=1
-readwrite=write
-stonewall
-
+# ===== Sequential, 128KiB, Q32T1 =====
 [seq-128k-q32t1-read]
+description=Sequential reads
 bs=128k
 iodepth=32
 numjobs=1
@@ -26,27 +14,16 @@ readwrite=read
 stonewall
 
 [seq-128k-q32t1-write]
+description=Sequential writes
 bs=128k
 iodepth=32
 numjobs=1
 readwrite=write
 stonewall
 
-[rand-4k-q32t16-randread]
-bs=4k
-iodepth=32
-numjobs=16
-readwrite=randread
-stonewall
-
-[rand-4k-q32t16-randwrite]
-bs=4k
-iodepth=32
-numjobs=16
-readwrite=randwrite
-stonewall
-
+# ===== Random, 4KiB, Q1T1 =====
 [rand-4k-q1t1-randread]
+description=Random reads
 bs=4k
 iodepth=1
 numjobs=1
@@ -54,6 +31,7 @@ readwrite=randread
 stonewall
 
 [rand-4k-q1t1-randwrite]
+description=Random writes
 bs=4k
 iodepth=1
 numjobs=1
