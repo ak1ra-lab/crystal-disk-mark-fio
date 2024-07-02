@@ -3,8 +3,6 @@ ioengine=libaio
 direct=1
 runtime=60
 time_based
-group_reporting
-filename=/dev/nvme0n1
 
 [seq-1m-q8t1-read]
 bs=1m
